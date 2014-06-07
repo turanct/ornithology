@@ -1,0 +1,31 @@
+{
+    "name": "turanct/ornithology",
+    "description": "A very basic command line twitter client, written in PHP",
+    "type": "application",
+    "homepage": "http://github.com/turanct/ornithology",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toon Daelman",
+            "email": "spinnewebber_toon@hotmail.com",
+            "homepage": "http://turanct.wordpress.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "zendframework/zendservice-twitter": "2.1.*@dev",
+        "symfony/console": "2.6.*@dev"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Ornithology": "src"
+        }
+    }
+}
