@@ -193,6 +193,21 @@ class Twitter
     }
 
     /**
+     * Favorite a tweet
+     *
+     * @param string $id The internal id
+     */
+    public function favorite($id)
+    {
+        $tweet = $this->dataStore->getTweetByInternalId($id);
+        if (empty($tweet)) {
+            throw new InvalidArgumentException('This tweet does not exist');
+        }
+
+        $this->client->favoritesCreate($tweet->id_str);
+    }
+
+    /**
      * Retweet a tweet
      *
      * @param string $id The internal id

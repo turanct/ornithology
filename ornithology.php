@@ -22,6 +22,7 @@ $application->add(new Ornithology\Command\Authorize('authorize', $twitterService
 $application->add(new Ornithology\Command\Refresh('refresh', $twitterService));
 $application->add(new Ornithology\Command\Tweet('tweet', $twitterService));
 $application->add(new Ornithology\Command\Retweet('retweet', $twitterService));
+$application->add(new Ornithology\Command\Favorite('favorite', $twitterService));
 
 // Set some defaults
 $application->setDefaultCommand('mark');
