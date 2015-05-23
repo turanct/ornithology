@@ -2,6 +2,8 @@
 
 namespace Ornithology\Service;
 
+use InvalidArgumentException;
+
 /**
  * Twitter Service
  *
@@ -113,7 +115,7 @@ class Twitter
         $response = $this->client->account->verifyCredentials();
 
         if (!$response->isSuccess()) {
-            throw new \InvalidArgumentException('Failed to login to twitter with these credentials');
+            throw new InvalidArgumentException('Failed to login to twitter with these credentials');
         } else {
             $this->loggedIn = true;
         }
@@ -198,9 +200,8 @@ class Twitter
     public function retweet($id)
     {
         $tweet = $this->dataStore->getTweetByInternalId($id);
-
         if (empty($tweet)) {
-            throw new \InvalidArgumentException('This tweet does not exist');
+            throw new InvalidArgumentException('This tweet does not exist');
         }
 
         $this->client->retweet($tweet->id_str);
