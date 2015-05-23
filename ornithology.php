@@ -21,6 +21,7 @@ $application->add(new Ornithology\Command\Mark('mark'));
 $application->add(new Ornithology\Command\Authorize('authorize', $twitterService));
 $application->add(new Ornithology\Command\Refresh('refresh', $twitterService));
 $application->add(new Ornithology\Command\Tweet('tweet', $twitterService));
+$application->add(new Ornithology\Command\Reply('reply', $twitterService));
 $application->add(new Ornithology\Command\Retweet('retweet', $twitterService));
 $application->add(new Ornithology\Command\Favorite('favorite', $twitterService));
 

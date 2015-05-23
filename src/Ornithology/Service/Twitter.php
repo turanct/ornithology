@@ -221,4 +221,22 @@ class Twitter
 
         $this->client->retweet($tweet->id_str);
     }
+
+    /**
+     * Reply to a tweet
+     *
+     * @param string $id   The internal id
+     * @param string $text The text we want to tweet
+     */
+    public function reply($id, $text)
+    {
+        $tweet = $this->dataStore->getTweetByInternalId($id);
+        if (empty($tweet)) {
+            throw new InvalidArgumentException('This tweet does not exist');
+        }
+
+        $text = '@' . $tweet->user->screen_name . ' ' . $text;
+
+        $this->client->statuses->update($text, $tweet->id_str);
+    }
 }
