@@ -160,5 +160,15 @@ class DataStoreFile implements DataStore
 
         return null;
     }
+
+    /**
+     * Get the persisted tweet list
+     *
+     * @return array
+     */
+    public function getTweetList()
+    {
+        return $this->tweetList;
+    }
 }
 

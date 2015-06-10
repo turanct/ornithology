@@ -24,6 +24,7 @@ $application->add(new Ornithology\Command\Tweet('tweet', $twitterService));
 $application->add(new Ornithology\Command\Reply('reply', $twitterService));
 $application->add(new Ornithology\Command\Retweet('retweet', $twitterService));
 $application->add(new Ornithology\Command\Favorite('favorite', $twitterService));
+$application->add(new Ornithology\Command\Urls('urls', $twitterService));
 
 // Set some defaults
 $application->setDefaultCommand('mark');

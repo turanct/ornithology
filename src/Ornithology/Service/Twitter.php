@@ -181,6 +181,26 @@ class Twitter
     }
 
     /**
+     * Get a list of URLs from the latest tweet list
+     *
+     * @param array
+     */
+    public function getLatestUrls()
+    {
+        $tweets = $this->dataStore->getTweetList();
+
+        $urls = array();
+
+        foreach ($tweets as $tweet) {
+            foreach ($tweet->entities->urls as $urlObject) {
+                $urls[] = $urlObject->expanded_url;
+            }
+        }
+
+        return $urls;
+    }
+
+    /**
      * Get a tweet by its internal id
      *
      * @param string $id The internal id
