@@ -54,7 +54,7 @@ return array(
 );
 ```
 
-Don't forget the placeholders in that piece of code by your actual key and secret.
+Don't forget to replace the placeholders in that piece of code by your actual key and secret.
 
 #### 2.3.3 Run ornithology for the first time!
 
